@@ -1,6 +1,5 @@
 import { pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
-import { time } from "drizzle-orm/mysql-core";
 
 export const users = pgTable("users", {
     id: text("id").primaryKey(), //clerkId
