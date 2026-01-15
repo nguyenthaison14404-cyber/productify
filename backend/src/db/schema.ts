@@ -12,13 +12,13 @@ export const users = pgTable("users", {
 
 export const products = pgTable("products", {
     id: uuid("id").defaultRandom().primaryKey(),
-    title: text("description").notNull(),
+    title: text("title").notNull(),
+    description: text("description").notNull(),
     imageUrl: text("image_url").notNull(),
     userId: text("user_id").notNull().references(() => users.id, { onDelete: "cascade"}),
     createdAt: timestamp("created_at", { mode: "date" }).notNull().defaultNow(),
     updatedAt: timestamp("updated_at", { mode: "date" }).notNull().defaultNow(),  
 });
-
 // john => 3 products
 // delete ur acc => 3 products deleted
 
