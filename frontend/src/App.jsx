@@ -1,4 +1,3 @@
-import { SignedIn, SignedOut, SignInButton, SignOutButton } from "@clerk/clerk-react";
 import Navbar from "./components/navbar";
 import { Route, Routes } from "react-router";
 import ProductPage from "./pages/ProductPage";
@@ -12,7 +11,7 @@ import useUserSync from "./hooks/useUserSync";
 
 
 function App() {
-  const { isClerkLoaded, isSignedIn} = useAuthReq();  
+  const { isClerkLoaded} = useAuthReq();  
   useUserSync()
   if (!isClerkLoaded) return null;
   return (
